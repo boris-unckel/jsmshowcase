@@ -48,7 +48,7 @@ public class GreeterWeb implements Serializable {
     /**
      * Injected GreeterEJB client
      */
-    @EJB(lookup = "ejb:myear/earpart-ejb/thegreeter!net.unckel.jsm.showcase.globalif.GreeterRemote")
+    @EJB(lookup = "ejb:earpart/earpart-ejb/thegreeter!net.unckel.jsm.showcase.globalif.GreeterRemote")
     private GreeterRemote greeterEJB;
 
     /**
