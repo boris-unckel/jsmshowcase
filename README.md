@@ -7,14 +7,18 @@ Pre-requisites
 3) WildFly 22 or above
 
 Steps to reproduce
-git clone 
-mvn clean install
-Copy ear and war to wildfly_home/standalone/deployments
-edit wildfly_home/bin/standalone.conf
+
+- git clone 
+- mvn clean install
+- Copy ear and war to wildfly_home/standalone/deployments
+- edit wildfly_home/bin/standalone.conf
+  
   uncomment SECMGR="true"
+  
   add JAVA_OPTS="$JAVA_OPTS -Dorg.wildfly.security.manager.log-only=true"
-edit wildfly_home/standalone/configuration/standalone-full.xml
-add in section <subsystem xmlns="urn:jboss:domain:logging:8.0">
+- edit wildfly_home/standalone/configuration/standalone-full.xml
+- add in section <subsystem xmlns="urn:jboss:domain:logging:8.0">
+  
     <logger category="net.unckel">
         <level name="ALL"/>
     </logger>
@@ -22,6 +26,6 @@ add in section <subsystem xmlns="urn:jboss:domain:logging:8.0">
         <level name="TRACE"/>
     </logger>
 
-start server with wildfly_home/bin/standalone.sh -c standalone-full.xml
+- start server with wildfly_home/bin/standalone.sh -c standalone-full.xml
 
-observe wildfly_home/standalone/log/server.log for details (not shown on console)
+- observe wildfly_home/standalone/log/server.log for details (not shown on console)
