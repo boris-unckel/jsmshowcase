@@ -15,8 +15,7 @@
 
   You should have received a copy of the GNU General Public License
   along with jsmshowcase.  If not, see <https://www.gnu.org/licenses/>. -->
-<beans xmlns="http://java.sun.com/xml/ns/javaee"
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-       http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
+       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd" bean-discovery-mode="annotated" version="2.0">
 </beans>
