@@ -16,16 +16,18 @@ Steps to reproduce
   uncomment SECMGR="true"
   
   add JAVA_OPTS="$JAVA_OPTS -Dorg.wildfly.security.manager.log-only=true"
-- edit wildfly_home/standalone/configuration/standalone-full.xml
-- add in section <subsystem xmlns="urn:jboss:domain:logging:8.0">
   
+- edit wildfly_home/standalone/configuration/standalone-full.xml
+- add in section ``` <subsystem xmlns="urn:jboss:domain:logging:8.0"> ```
+
+```
     <logger category="net.unckel">
         <level name="ALL"/>
     </logger>
     <logger category="org.wildfly.security.access">
         <level name="TRACE"/>
     </logger>
-
+```
 - start server with wildfly_home/bin/standalone.sh -c standalone-full.xml
 
 - observe wildfly_home/standalone/log/server.log for details (not shown on console)
