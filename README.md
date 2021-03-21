@@ -29,5 +29,5 @@ Steps to reproduce
     </logger>
 ```
 - start server with wildfly_home/bin/standalone.sh -c standalone-full.xml
-
+- Reqeust http://localhost:8080/warpart/rest/json (Browser or curl)
 - observe wildfly_home/standalone/log/server.log for details (not shown on console)
