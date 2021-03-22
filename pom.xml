@@ -30,6 +30,7 @@
 		<module>ejbremotepart</module>
 		<module>earpart</module>
 		<module>warpart</module>
+		<module>springclient</module>
 	</modules>
 
 </project>
