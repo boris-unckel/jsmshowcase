@@ -22,14 +22,15 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import net.unckel.jsm.showcase.globalif.GreeterRemote;
+import net.unckel.jsm.showcase.globalif.GreeterIf;
+
+//import net.unckel.jsm.showcase.globalif.GreeterRemote;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Model;
 
 /**
  * @author borisunckel
@@ -37,7 +38,6 @@ import javax.enterprise.inject.Model;
  */
 @Path("/")
 @SessionScoped
-@Model
 public class GreeterWeb implements Serializable {
 
     /**
@@ -49,7 +49,8 @@ public class GreeterWeb implements Serializable {
      * Injected GreeterEJB client
      */
     @EJB(lookup = "ejb:earpart/earpart-ejb/thegreeter!net.unckel.jsm.showcase.globalif.GreeterRemote")
-    private GreeterRemote greeterEJB;
+    //@EJB(lookup = "java:global/earpart/earpart-ejb/thegreeter!net.unckel.jsm.showcase.globalif.GreeterRemote")
+    private GreeterIf greeterEJB;
 
     /**
      * 
