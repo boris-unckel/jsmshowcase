@@ -50,10 +50,9 @@ public class Greeter implements GreeterLocal, GreeterRemote {
     @PostConstruct
     private void initialize() {
         LOG.info("EJB Greeter initialize");
-        final InputStream is = Objects.requireNonNull(
-                Thread.currentThread().getContextClassLoader().getResourceAsStream(RESOURCE1), RESOURCE1);
         final Properties props = new Properties();
-        try {
+        try (final InputStream is = Objects.requireNonNull(
+                Thread.currentThread().getContextClassLoader().getResourceAsStream(RESOURCE1), RESOURCE1);) {
             props.load(is);
         } catch (final IOException e) {
             throw new UncheckedIOException(e.getMessage(), e);
@@ -66,10 +65,9 @@ public class Greeter implements GreeterLocal, GreeterRemote {
     public String greet(final String name) {
         Objects.requireNonNull(name, "name");
         LOG.info("EJB Greeter greet");
-        final InputStream is = Objects.requireNonNull(
-                Thread.currentThread().getContextClassLoader().getResourceAsStream(RESOURCE2), RESOURCE2);
         final Properties props = new Properties();
-        try {
+        try (final InputStream is = Objects.requireNonNull(
+                Thread.currentThread().getContextClassLoader().getResourceAsStream(RESOURCE2), RESOURCE2);) {
             props.load(is);
         } catch (final IOException e) {
             throw new UncheckedIOException(e.getMessage(), e);
